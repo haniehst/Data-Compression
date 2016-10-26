@@ -12,6 +12,8 @@ class Vector
         ~Vector();
         int get_size();
         T operator[](int);
+        Vector& operator = (const Vector&);
+        Vector& operator += (T);
         int at(int i);
 
     private:
