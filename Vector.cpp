@@ -14,8 +14,14 @@ Vector<T>::Vector(int i)
     _size = 0;
 }
 template <class T>
-Vector<T>::Vector(const Vector& v)
+Vector<T>::Vector(const Vector& v) ///copy_constructor
 {
+        _capacity = v._capacity;
+        _size = v._size;
+        _array = new T[_capacity];
+        for (int i = 0; i<_size; i++)
+            _array[i] = v._array[i];
+
 }
 template <class T>
 void Vector<T>::push(T val)
@@ -56,4 +62,24 @@ template <class T>
 int Vector<T>::get_size()
 {
     return _size;
+}
+template <class T>
+Vector<T>& Vector<T>::operator = (const Vector& v){
+    if(this != &v)
+    {
+        _capacity = v._capacity;
+        _size = v._size;
+        delete[] _array;
+        _array = new T[_capacity];
+        for (int i = 0; i<_size; i++)
+            _array[i] = v._array[i];
+    }
+    return *this;
+
+}
+
+template <class T>
+Vector<T>& Vector<T>::operator += (T i){
+    this -> push(i);
+    return *this;
 }
