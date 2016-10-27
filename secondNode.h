@@ -1,16 +1,14 @@
+#include "Vector.h"
 #ifndef SECONDNODE_H
 #define SECONDNODE_H
 
 
-class secondNode
+typedef unsigned short int usi;
+
+struct secondNode
 {
-    public:
-        secondNode();
-        virtual ~secondNode();
-
-    protected:
-
-    private:
+    usi value;
+    Vector<usi> time;
 };
 
 #endif // SECONDNODE_H
