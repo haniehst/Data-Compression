@@ -1,16 +1,14 @@
 #ifndef FIRSTNODE_H
 #define FIRSTNODE_H
+#include "secondNode.h"
+#include "Vector.h"
 
+typedef unsigned short int usi;
 
-class firstNode
+struct firstNode
 {
-    public:
-        firstNode();
-        virtual ~firstNode();
-
-    protected:
-
-    private:
+    usi value;
+    Vector<secondNode> child_node;
 };
 
 #endif // FIRSTNODE_H
